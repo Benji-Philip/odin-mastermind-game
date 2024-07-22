@@ -19,8 +19,8 @@ require_relative 'lib/game'
 puts 'You will get 12 tries to figure out the secret code. Enter your guess as a 4 digit secret code (eg. 1234)'
 puts "\n-1 implies a digit is not part of the code"
 puts '0 implies a digit exists in the code'
-puts '1 implies a digit is in the correlates to the same position as in the secret code'
-puts 'order of the feedback does not correlate with the digits position in the guess or the secret code'
+puts '1 implies a digit correlates to the same position as in the secret code'
+puts 'order of the feedback does not correlate with the digits position in your guess or the secret code'
 stop_playing = false
 until stop_playing
   game = Game.new
