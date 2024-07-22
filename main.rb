@@ -16,4 +16,15 @@ require_relative 'lib/game'
 
 # components - player computer game game-rounds secret-code guesses feedback history-of-player
 
-game = Game.new
+stop_playing = false
+until stop_playing
+  game = Game.new
+  game.start_round
+  puts 'Congraattss!!' if game.won
+  puts 'Play again?(yes/no)'
+  reply = gets.chomp
+  if reply.downcase != 'yes' || reply.downcase != 'no' || reply.downcase != 'y' || reply.downcase != 'n'
+    puts 'Invalid input'
+  end
+  stop_playing = true if reply.downcase == 'no' || reply.downcase == 'n'
+end

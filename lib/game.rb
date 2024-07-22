@@ -2,6 +2,8 @@
 
 # defines the game methods
 class Game
+  attr_reader :won
+
   def initialize
     @won = false
     @feedback = [-1, -1, -1, -1]
