@@ -47,7 +47,7 @@ class Game
       @history.push(@feedback.sort.reverse)
       present_results
       puts ''
-      @turn += 1
+      @turn += 1 unless @won
     end
     end_round
   end
