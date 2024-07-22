@@ -28,7 +28,7 @@ class Game
     @player.history.each_with_index do |element, index|
       puts "#{element},#{@history[index]}"
       puts ''
-      puts "#{13 - @turn} guesses left"
+      puts "#{12 - @turn} guesses left"
     end
   end
 
