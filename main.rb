@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require_relative 'lib/player'
+
 # 12 turns
 # 4 colors
 # guess the code
