@@ -10,6 +10,7 @@ class Game
     @turn = 1
     @computer = Computer.new
     @computer.create_secret_code
+    puts ''
     puts "Computer has chosen it's secret-code"
     @player = Player.new
     @history = []
@@ -17,7 +18,7 @@ class Game
 
   def calculate_results
     @won = true if @player.guess == @computer.secret_code
-    @feedback.each_with_index do |_element, index|
+    @player.guess.each_with_index do |_element, index|
       @feedback[index] = -1
       @feedback[index] = 0 if @computer.secret_code.include?(@player.guess[index])
       @feedback[index] = 1 if @player.guess[index] == @computer.secret_code[index]
@@ -29,17 +30,18 @@ class Game
       puts "#{element},#{@history[index]}"
     end
     puts ''
-    puts "#{12 - @turn} guesses left"
+    puts "#{12 - @turn} guesses left" unless @won
   end
 
   def end_round
     puts 'Yes!!' if @won
     puts "The secret code is #{@computer.secret_code.join}"
+    puts "You've guessed it in #{turn} guesses!" if @won
   end
 
   def start_round
     until @turn > 12 || @won
-      puts 'Enter your guess :'
+      puts "\nEnter your guess :"
       @player.add_guess
       calculate_results
       @history.push(@feedback.sort.reverse)
