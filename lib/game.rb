@@ -27,9 +27,9 @@ class Game
   def present_results
     @player.history.each_with_index do |element, index|
       puts "#{element},#{@history[index]}"
-      puts ''
-      puts "#{12 - @turn} guesses left"
     end
+    puts ''
+    puts "#{12 - @turn} guesses left"
   end
 
   def end_round
@@ -42,7 +42,7 @@ class Game
       puts 'Enter your guess :'
       @player.add_guess
       calculate_results
-      @history.push(@feedback.sort)
+      @history.push(@feedback.sort.reverse)
       present_results
       puts ''
       @turn += 1
