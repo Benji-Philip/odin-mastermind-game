@@ -12,7 +12,7 @@ class Player
 
   def validate_guess
     @guess.map!(&:to_i)
-    @guess_is_valid = @guess.all? { |element| element.betweeen?(0, 8) && @guess.length == 4 }
+    @guess_is_valid = @guess.all? { |element| element.between?(0, 8) && @guess.length == 4 }
   end
 
   def add_guess
