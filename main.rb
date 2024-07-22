@@ -2,7 +2,7 @@
 
 require_relative 'lib/player'
 require_relative 'lib/computer'
-
+require_relative 'lib/game'
 
 # 12 turns
 # 4 colors
@@ -16,3 +16,4 @@ require_relative 'lib/computer'
 
 # components - player computer game game-rounds secret-code guesses feedback history-of-player
 
+game = Game.new
