@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'lib/player'
+require_relative 'lib/computer'
+
 
 # 12 turns
 # 4 colors
@@ -13,3 +15,4 @@ require_relative 'lib/player'
 # if player guesses within 12 turns they win otherwise they lose
 
 # components - player computer game game-rounds secret-code guesses feedback history-of-player
+
