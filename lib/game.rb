@@ -36,7 +36,7 @@ class Game
   def end_round
     puts 'Yes!!' if @won
     puts "The secret code is #{@computer.secret_code.join}"
-    puts "You've guessed it in #{turn} guesses!" if @won
+    puts "You've guessed it in #{@turn} guesses!" if @won
   end
 
   def start_round
